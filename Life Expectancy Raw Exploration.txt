@@ -1,0 +1,260 @@
+> life_expectancy<-read.csv("D:\\Life Expectancy Data.csv", header=TRUE)
+
+> View(life_expectancy)
+
+> head(life_expectancy)
+      Country Year     Status Life.expectancy Adult.Mortality
+1 Afghanistan 2015 Developing            65.0             263
+2 Afghanistan 2014 Developing            59.9             271
+3 Afghanistan 2013 Developing            59.9             268
+4 Afghanistan 2012 Developing            59.5             272
+5 Afghanistan 2011 Developing            59.2             275
+6 Afghanistan 2010 Developing            58.8             279
+  infant.deaths Alcohol percentage.expenditure Hepatitis.B
+1            62    0.01              71.279624          65
+2            64    0.01              73.523582          62
+3            66    0.01              73.219243          64
+4            69    0.01              78.184215          67
+5            71    0.01               7.097109          68
+6            74    0.01              79.679367          66
+  Measles  BMI under.five.deaths Polio Total.expenditure
+1    1154 19.1                83     6              8.16
+2     492 18.6                86    58              8.18
+3     430 18.1                89    62              8.13
+4    2787 17.6                93    67              8.52
+5    3013 17.2                97    68              7.87
+6    1989 16.7               102    66              9.20
+  Diphtheria HIV.AIDS       GDP Population thinness..1.19.years
+1         65      0.1 584.25921   33736494                 17.2
+2         62      0.1 612.69651     327582                 17.5
+3         64      0.1 631.74498   31731688                 17.7
+4         67      0.1 669.95900    3696958                 17.9
+5         68      0.1  63.53723    2978599                 18.2
+6         66      0.1 553.32894    2883167                 18.4
+  thinness.5.9.years Income.composition.of.resources Schooling
+1               17.3                           0.479      10.1
+2               17.5                           0.476      10.0
+3               17.7                           0.470       9.9
+4               18.0                           0.463       9.8
+5               18.2                           0.454       9.5
+6               18.4                           0.448       9.2
+
+> tail(life_expectancy)
+      Country Year     Status Life.expectancy Adult.Mortality
+2933 Zimbabwe 2005 Developing            44.6             717
+2934 Zimbabwe 2004 Developing            44.3             723
+2935 Zimbabwe 2003 Developing            44.5             715
+2936 Zimbabwe 2002 Developing            44.8              73
+2937 Zimbabwe 2001 Developing            45.3             686
+2938 Zimbabwe 2000 Developing            46.0             665
+     infant.deaths Alcohol percentage.expenditure Hepatitis.B
+2933            28    4.14               8.717409          65
+2934            27    4.36               0.000000          68
+2935            26    4.06               0.000000           7
+2936            25    4.43               0.000000          73
+2937            25    1.72               0.000000          76
+2938            24    1.68               0.000000          79
+     Measles  BMI under.five.deaths Polio Total.expenditure
+2933     420 27.5                43    69              6.44
+2934      31 27.1                42    67              7.13
+2935     998 26.7                41     7              6.52
+2936     304 26.3                40    73              6.53
+2937     529 25.9                39    76              6.16
+2938    1483 25.5                39    78              7.10
+     Diphtheria HIV.AIDS       GDP Population
+2933         68     30.3 444.76575     129432
+2934         65     33.6 454.36665   12777511
+2935         68     36.7 453.35116   12633897
+2936         71     39.8  57.34834     125525
+2937         75     42.1 548.58731   12366165
+2938         78     43.5 547.35888   12222251
+     thinness..1.19.years thinness.5.9.years
+2933                  9.0                9.0
+2934                  9.4                9.4
+2935                  9.8                9.9
+2936                  1.2                1.3
+2937                  1.6                1.7
+2938                 11.0               11.2
+     Income.composition.of.resources Schooling
+2933                           0.406       9.3
+2934                           0.407       9.2
+2935                           0.418       9.5
+2936                           0.427      10.0
+2937                           0.427       9.8
+2938                           0.434       9.8
+
+> class(life_expectancy)
+[1] "data.frame"
+
+> length(life_expectancy)
+[1] 22
+
+> ncol(life_expectancy)
+[1] 22
+
+> names(life_expectancy)
+ [1] "Country"                        
+ [2] "Year"                           
+ [3] "Status"                         
+ [4] "Life.expectancy"                
+ [5] "Adult.Mortality"                
+ [6] "infant.deaths"                  
+ [7] "Alcohol"                        
+ [8] "percentage.expenditure"         
+ [9] "Hepatitis.B"                    
+[10] "Measles"                        
+[11] "BMI"                            
+[12] "under.five.deaths"              
+[13] "Polio"                          
+[14] "Total.expenditure"              
+[15] "Diphtheria"                     
+[16] "HIV.AIDS"                       
+[17] "GDP"                            
+[18] "Population"                     
+[19] "thinness..1.19.years"           
+[20] "thinness.5.9.years"             
+[21] "Income.composition.of.resources"
+[22] "Schooling"                      
+
+> length(life_expectancy[ ,1])
+[1] 2938
+
+> nrow(life_expectancy)
+[1] 2938
+
+> ncol(life_expectancy[ ,1])
+NULL
+
+> length(life_expectancy[ ,1]/15)
+Error in life_expectancy[, 1]/15 : 
+  non-numeric argument to binary operator
+
+> length(life_expectancy["Albania" ,"Year"])
+[1] 1
+> length(life_expectancy[ ,"Year"])
+[1] 2938
+> length(life_expectancy["Afghanistan",])
+[1] 22
+> length(life_expectancy["Afghanistan",])
+[1] 22
+
+> str(life_expectancy)
+'data.frame':	2938 obs. of  22 variables:
+ $ Country                        : chr  "Afghanistan" "Afghanistan" "Afghanistan" "Afghanistan" ...
+ $ Year                           : int  2015 2014 2013 2012 2011 2010 2009 2008 2007 2006 ...
+ $ Status                         : chr  "Developing" "Developing" "Developing" "Developing" ...
+ $ Life.expectancy                : num  65 59.9 59.9 59.5 59.2 58.8 58.6 58.1 57.5 57.3 ...
+ $ Adult.Mortality                : int  263 271 268 272 275 279 281 287 295 295 ...
+ $ infant.deaths                  : int  62 64 66 69 71 74 77 80 82 84 ...
+ $ Alcohol                        : num  0.01 0.01 0.01 0.01 0.01 0.01 0.01 0.03 0.02 0.03 ...
+ $ percentage.expenditure         : num  71.3 73.5 73.2 78.2 7.1 ...
+ $ Hepatitis.B                    : int  65 62 64 67 68 66 63 64 63 64 ...
+ $ Measles                        : int  1154 492 430 2787 3013 1989 2861 1599 1141 1990 ...
+ $ BMI                            : num  19.1 18.6 18.1 17.6 17.2 16.7 16.2 15.7 15.2 14.7 ...
+ $ under.five.deaths              : int  83 86 89 93 97 102 106 110 113 116 ...
+ $ Polio                          : int  6 58 62 67 68 66 63 64 63 58 ...
+ $ Total.expenditure              : num  8.16 8.18 8.13 8.52 7.87 9.2 9.42 8.33 6.73 7.43 ...
+ $ Diphtheria                     : int  65 62 64 67 68 66 63 64 63 58 ...
+ $ HIV.AIDS                       : num  0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 0.1 ...
+ $ GDP                            : num  584.3 612.7 631.7 670 63.5 ...
+ $ Population                     : num  33736494 327582 31731688 3696958 2978599 ...
+ $ thinness..1.19.years           : num  17.2 17.5 17.7 17.9 18.2 18.4 18.6 18.8 19 19.2 ...
+ $ thinness.5.9.years             : num  17.3 17.5 17.7 18 18.2 18.4 18.7 18.9 19.1 19.3 ...
+ $ Income.composition.of.resources: num  0.479 0.476 0.47 0.463 0.454 0.448 0.434 0.433 0.415 0.405 ...
+ $ Schooling                      : num  10.1 10 9.9 9.8 9.5 9.2 8.9 8.7 8.4 8.1 ...
+
+> dplyr::glimpse(life_expectancy)
+Error in loadNamespace(x) : there is no package called ‘dplyr’
+
+> install.packages("dplyr")
+WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
+
+https://cran.rstudio.com/bin/windows/Rtools/
+Installing package into ‘C:/Users/doome/Documents/R/win-library/4.1’
+(as ‘lib’ is unspecified)
+also installing the dependencies ‘purrr’, ‘generics’, ‘tidyselect’
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/purrr_0.3.4.zip'
+Content type 'application/zip' length 430327 bytes (420 KB)
+downloaded 420 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/generics_0.1.0.zip'
+Content type 'application/zip' length 71581 bytes (69 KB)
+downloaded 69 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/tidyselect_1.1.1.zip'
+Content type 'application/zip' length 204470 bytes (199 KB)
+downloaded 199 KB
+
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.1/dplyr_1.0.7.zip'
+Content type 'application/zip' length 1345680 bytes (1.3 MB)
+downloaded 1.3 MB
+
+package ‘purrr’ successfully unpacked and MD5 sums checked
+package ‘generics’ successfully unpacked and MD5 sums checked
+package ‘tidyselect’ successfully unpacked and MD5 sums checked
+package ‘dplyr’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\doome\AppData\Local\Temp\RtmpuW9PEE\downloaded_packages
+> library(dplyr)
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Warning message:
+package ‘dplyr’ was built under R version 4.1.1 
+
+> glimpse(life_expectancy)
+Rows: 2,938
+Columns: 22
+$ Country                         <chr> "Afghanistan", "Afghanistan", "Afghanistan", "Afghanistan"~
+$ Year                            <int> 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006~
+$ Status                          <chr> "Developing", "Developing", "Developing", "Developing", "D~
+$ Life.expectancy                 <dbl> 65.0, 59.9, 59.9, 59.5, 59.2, 58.8, 58.6, 58.1, 57.5, 57.3~
+$ Adult.Mortality                 <int> 263, 271, 268, 272, 275, 279, 281, 287, 295, 295, 291, 293~
+$ infant.deaths                   <int> 62, 64, 66, 69, 71, 74, 77, 80, 82, 84, 85, 87, 87, 88, 88~
+$ Alcohol                         <dbl> 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03, 0.02, 0.03~
+$ percentage.expenditure          <dbl> 71.279624, 73.523582, 73.219243, 78.184215, 7.097109, 79.6~
+$ Hepatitis.B                     <int> 65, 62, 64, 67, 68, 66, 63, 64, 63, 64, 66, 67, 65, 64, 63~
+$ Measles                         <int> 1154, 492, 430, 2787, 3013, 1989, 2861, 1599, 1141, 1990, ~
+$ BMI                             <dbl> 19.1, 18.6, 18.1, 17.6, 17.2, 16.7, 16.2, 15.7, 15.2, 14.7~
+$ under.five.deaths               <int> 83, 86, 89, 93, 97, 102, 106, 110, 113, 116, 118, 120, 122~
+$ Polio                           <int> 6, 58, 62, 67, 68, 66, 63, 64, 63, 58, 58, 5, 41, 36, 35, ~
+$ Total.expenditure               <dbl> 8.16, 8.18, 8.13, 8.52, 7.87, 9.20, 9.42, 8.33, 6.73, 7.43~
+$ Diphtheria                      <int> 65, 62, 64, 67, 68, 66, 63, 64, 63, 58, 58, 5, 41, 36, 33,~
+$ HIV.AIDS                        <dbl> 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1~
+$ GDP                             <dbl> 584.25921, 612.69651, 631.74498, 669.95900, 63.53723, 553.~
+$ Population                      <dbl> 33736494, 327582, 31731688, 3696958, 2978599, 2883167, 284~
+$ thinness..1.19.years            <dbl> 17.2, 17.5, 17.7, 17.9, 18.2, 18.4, 18.6, 18.8, 19.0, 19.2~
+$ thinness.5.9.years              <dbl> 17.3, 17.5, 17.7, 18.0, 18.2, 18.4, 18.7, 18.9, 19.1, 19.3~
+$ Income.composition.of.resources <dbl> 0.479, 0.476, 0.470, 0.463, 0.454, 0.448, 0.434, 0.433, 0.~
+$ Schooling                       <dbl> 10.1, 10.0, 9.9, 9.8, 9.5, 9.2, 8.9, 8.7, 8.4, 8.1, 7.9, 6~
+> plot(life_expectancy$Life.expectancy,life_expectancy$Year)
+
+> idx<-identify(life_expectancy$Life.expectancy,life_expectancy$Year)
+
+> idx<-identify(life_expectancy$Life.expectancy,life_expectancy$Country)
+Warning message:
+In xy.coords(x, y, setLab = FALSE) : NAs introduced by coercion
+
+> idx<-identify(life_expectancy$Life.expectancy,life_expectancy$Country)
+Error in identify.default(life_expectancy$Life.expectancy, life_expectancy$Country) : 
+  plot.new has not been called yet
+In addition: Warning message:
+In xy.coords(x, y, setLab = FALSE) : NAs introduced by coercion
+
+
+> plot(life_expectancy$Life.expectancy,life_expectancy$Year, xlab = "Life Expectancy", ylab = "Per year", main = "Life Expectancy Per Year plot")
+> plot(life_expectancy$Life.expectancy,life_expectancy$Year, xlab = "Life Expectancy", ylab = "Per year", main = "Life Expectancy Per Year plot", col = "blue")
+
+> plot(life_expectancy$Life.expectancy,life_expectancy$Year, xlab = "Life Expectancy", ylab = "Per year", main = "Life Expectancy Per Year plot", col = "blue")
+> barplot(life_expectancy$Life.expectancy,life_expectancy$Year)
+> barplot(life_expectancy$Life.expectancy,life_expectancy$Year, xlab = "Life Expectancy", ylab = "Per year", main = "Life Expectancy Per Year plot", col = "blue")
